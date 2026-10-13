@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import YogicMark from "@/components/YogicMark";
+import ShellAccent from "@/components/ShellAccent";
 
 export const metadata: Metadata = {
   title: "Work With Me | Mindful Yogi",
@@ -88,7 +89,7 @@ const offerings = [
 
 export default function ProgrammesPage() {
   return (
-    <main className="bg-[#f8f2ea] text-[#2d241d] antialiased">
+    <main className="bg-[#f7f3e9] text-[#2d241d] antialiased">
       <header className="mx-auto max-w-6xl px-5 py-6 sm:px-8 lg:px-10">
         <nav className="flex items-center justify-between gap-4 rounded-full border border-[#d9c3aa] bg-[#fffaf4]/80 px-4 py-3 shadow-[0_10px_24px_rgba(88,61,47,0.05)] backdrop-blur-sm sm:px-6">
           <Link
@@ -225,8 +226,9 @@ export default function ProgrammesPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
-        <div className="flex flex-col gap-6 rounded-[1.5rem] border border-[#d9c3aa] bg-[linear-gradient(135deg,#f5ebdd,#e8d1ae)] p-6 sm:p-9 md:flex-row md:items-center md:justify-between">
-          <div className="max-w-2xl">
+        <div className="relative flex flex-col gap-6 overflow-hidden rounded-[1.5rem] border border-[#d9c3aa] bg-[linear-gradient(135deg,#f5ebdd,#e8d1ae)] p-6 sm:p-9 md:flex-row md:items-center md:justify-between">
+          <ShellAccent className="pointer-events-none absolute -bottom-5 -right-4 h-28 w-28 text-[#fffdf7]/65 sm:h-36 sm:w-36" />
+          <div className="relative z-10 max-w-2xl">
             <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#6d4a39]">
               <YogicMark symbol="diya" className="h-4 w-5 text-[#a87835]" />A
               first conversation
@@ -241,7 +243,7 @@ export default function ProgrammesPage() {
           </div>
           <a
             href="mailto:hello@mindfulyogi.com"
-            className="inline-flex shrink-0 items-center justify-center rounded-full bg-[#7f5645] px-6 py-3 text-center font-semibold text-[#fffaf5] transition hover:bg-[#684733]"
+            className="relative z-10 inline-flex shrink-0 items-center justify-center rounded-full bg-[#7f5645] px-6 py-3 text-center font-semibold text-[#fffaf5] transition hover:bg-[#684733]"
           >
             Send an Enquiry
           </a>

@@ -1,4 +1,6 @@
 import YogicMark from "@/components/YogicMark";
+import HomeShellAccent from "@/components/HomeShellAccent";
+import styles from "./home.module.css";
 
 const audiences = [
   "Beginners settling into a steady practice",
@@ -13,37 +15,31 @@ const programs = [
     name: "Beginner Yoga Foundations",
     description:
       "A welcoming path into posture, breath, and confidence-building for home practice.",
-    accent: "Sand",
   },
   {
     name: "Stress Relief & Breathwork",
     description:
       "Gentle movement and calming breath practices to help life feel less hurried.",
-    accent: "Moss",
   },
   {
     name: "Gentle Back-Care Yoga",
     description:
       "Supported movement, posture awareness, and ease for everyday mobility.",
-    accent: "Clay",
   },
   {
     name: "Women’s Wellbeing Yoga",
     description:
       "Complementary support for stress, energy, and body awareness with care and context.",
-    accent: "Terracotta",
   },
   {
     name: "Private 1:1 Yoga",
     description:
       "Personal guidance in breath, confidence, and mindful practice, online or in person.",
-    accent: "Oak",
   },
   {
     name: "Yoga Philosophy Sessions",
     description:
       "Thoughtful exploration of practice, attention, stillness, and living with awareness.",
-    accent: "Ash",
   },
 ];
 
@@ -54,19 +50,67 @@ const bookingSteps = [
   "Receive your calendar invite and Google Meet link",
 ];
 
+const listMotifs = ["starfish", "spiral", "fan"] as const;
+
+const philosophyTopics = [
+  "Yoga Beyond Posture",
+  "Breath and Attention",
+  "What Is Practice?",
+  "Stillness in Daily Life",
+];
+
 const products = [
   "Mindful Yogi flashcards and reflection prompts",
   "Printable movement and breath cards for daily practice",
   "A gentle starter kit for home practice and self-study",
 ];
 
+function MotifBullet({
+  index,
+  size,
+}: {
+  index: number;
+  size: "small" | "medium" | "large";
+}) {
+  const dimensions = {
+    small: "h-4 w-4",
+    medium: "h-5 w-5",
+    large: "h-7 w-7",
+  };
+
+  return (
+    <span aria-hidden="true" className={`relative mt-1 shrink-0 ${dimensions[size]}`}>
+      <HomeShellAccent
+        kind={listMotifs[index % listMotifs.length]}
+        className="inset-0 h-full w-full [&_path]:stroke-[#ad9679] [&_path]:[stroke-opacity:0.8] [&_path]:[stroke-width:2]"
+      />
+    </span>
+  );
+}
+
+function SectionLabel({
+  label,
+  className = "",
+}: {
+  label: string;
+  className?: string;
+}) {
+  return (
+    <p
+      className={`text-xs font-medium uppercase text-[#827565] ${className}`}
+    >
+      {label}
+    </p>
+  );
+}
+
 export default function HomePage() {
   return (
-    <main className="bg-[#f8f2ea] text-[#2d241d] antialiased">
-      <header className="mx-auto max-w-6xl px-5 py-6 sm:px-8 lg:px-10">
-        <nav className="flex items-center justify-between gap-4 rounded-full border border-[#d9c3aa] bg-[#fffaf4]/80 px-4 py-3 shadow-[0_10px_24px_rgba(88,61,47,0.05)] backdrop-blur-sm sm:px-6">
+    <main className={`${styles.paper} overflow-hidden bg-[#f5efe2] text-[#2d241d] antialiased [&_*]:tracking-normal`}>
+      <header className="mx-auto max-w-6xl px-5 py-7 sm:px-8 lg:px-10">
+        <nav className="flex items-center justify-between gap-4 border-b border-[#d8c7b6] pb-5">
           <div className="flex items-center gap-4 pr-5">
-            <span className="font-serif text-2xl tracking-tight text-[#251d19]">
+            <span className="font-serif text-xl text-[#251d19]">
               Mindful Yogi
             </span>
           </div>
@@ -100,21 +144,22 @@ export default function HomePage() {
 
           <a
             href="#booking"
-            className="rounded-full bg-[#7f5645] px-4 py-2 text-sm font-semibold text-[#fffaf5] transition hover:bg-[#684733]"
+            className="border border-[#8c6652] bg-[#8c6652] px-4 py-2 text-sm font-semibold text-[#fffaf5] transition hover:bg-[#6f4f40]"
           >
             Book a Session
           </a>
         </nav>
       </header>
 
-      <section className="mx-auto max-w-6xl px-5 pb-12 pt-4 sm:px-8 lg:px-10 lg:pb-24">
-        <div className="grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="relative">
-            <div className="mb-6 inline-flex rounded-full border border-[#d9c3aa] bg-[#f3e6d8] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#6d4a39]">
+      <section className="relative mx-auto max-w-6xl px-5 pb-20 pt-10 sm:px-8 lg:px-10 lg:pb-28 lg:pt-20">
+        <div className="grid items-end gap-14 lg:grid-cols-[1.14fr_0.86fr]">
+          <div className="relative pt-40 sm:pt-48 lg:pt-56">
+            <HomeShellAccent kind="starfish" className="-left-6 top-0 h-36 w-36 rotate-[-16deg] opacity-45 sm:-left-10 sm:h-44 sm:w-44 lg:h-52 lg:w-52" />
+            <p className="mb-8 max-w-md text-xs font-medium uppercase text-[#7b5d49]">
               Gentle movement, breathwork, and philosophy
-            </div>
-            <h1 className="max-w-xl font-serif text-5xl leading-[0.92] tracking-[-0.04em] text-[#1d1714] sm:text-6xl lg:text-[4.2rem]">
-              Less noise. More breath.
+            </p>
+            <h1 className="max-w-3xl font-serif text-5xl leading-[0.94] text-[#1d1714] sm:text-6xl lg:text-[5rem]">
+              Less noise.<br />More <em className="italic">breath.</em>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-[#574739]">
               Gentle yoga, breathwork, and philosophy for modern life — helping
@@ -123,65 +168,41 @@ export default function HomePage() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a
                 href="#booking"
-                className="rounded-full bg-[#7f5645] px-6 py-3 text-center font-semibold text-[#fffaf5] shadow-sm transition hover:bg-[#684733]"
+                className="border border-[#8c6652] bg-[#8c6652] px-6 py-3 text-center font-semibold text-[#fffaf5] transition hover:bg-[#6f4f40]"
               >
                 Book a Session
               </a>
               <a
                 href="/programmes"
-                className="rounded-full border border-[#caa98c] bg-[#fffaf4] px-6 py-3 text-center font-semibold text-[#3d2e27] transition hover:border-[#9d7b62] hover:text-[#291d18]"
+                className="px-2 py-3 text-center font-medium text-[#3d2e27] underline decoration-[#caa98c] underline-offset-8 transition hover:text-[#7b4f38]"
               >
                 Explore Programmes
               </a>
             </div>
-            <div className="mt-8 flex flex-wrap gap-6 text-sm text-[#5d473d]">
+            <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 border-t border-[#d8c7b6] pt-5 text-sm text-[#5d473d]">
               <span>Beginner-friendly</span>
               <span>Breath + movement</span>
               <span>Reflective practice</span>
             </div>
           </div>
 
-          <div className="relative">
-            <div className="relative overflow-hidden rounded-[2rem] border border-[#d9c3aa] bg-[radial-gradient(circle_at_top,_#f7ecdf,_#ecd4b4_42%,_#d2b08e_100%)] p-4 shadow-[0_30px_80px_rgba(73,52,37,0.12)]">
-              <div className="relative overflow-hidden rounded-[1.5rem] border border-[#d8c5ae] bg-[#f9f4ee] p-5">
-                <div className="rounded-[1.5rem] bg-[linear-gradient(135deg,#f5ebdf,#e8d5bc)] p-5">
-                  <div className="flex items-center justify-between border-b border-[#d8c2a5] pb-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#5d473d]">
-                    <span>Practice note</span>
-                    <span className="flex items-center gap-2">
-                      <YogicMark
-                        symbol="breath"
-                        className="h-5 w-10 text-[#a87835]"
-                      />
-                      <span>15 min</span>
-                    </span>
-                  </div>
-                  <div className="mt-6 text-4xl font-serif leading-none text-[#1f1714]">
-                    Steady breath
-                  </div>
-                  <div className="mt-6 grid grid-cols-2 gap-3">
-                    <div className="rounded-[1.1rem] border border-[#d7c0a3] bg-[#fffaf5]/85 p-3">
-                      <div className="text-[11px] uppercase tracking-[0.18em] text-[#695548]">
-                        Yoga
-                      </div>
-                      <div className="mt-2 text-lg font-semibold text-[#1f1714]">
-                        Gentle
-                      </div>
-                    </div>
-                    <div className="rounded-[1.1rem] border border-[#d7c0a3] bg-[#fffaf5]/85 p-3">
-                      <div className="text-[11px] uppercase tracking-[0.18em] text-[#695548]">
-                        Breath
-                      </div>
-                      <div className="mt-2 text-lg font-semibold text-[#1f1714]">
-                        4 rounds
-                      </div>
-                    </div>
-                  </div>
-                  <p className="mt-5 text-sm leading-6 text-[#493f39]">
-                    Grounding, breath awareness, and a steadier rhythm for the
-                    day.
-                  </p>
-                </div>
-              </div>
+          <div className="relative aspect-[4/5] rounded-t-[48%] bg-[#e8e1d2]">
+            <HomeShellAccent kind="fan" className="left-3 top-[48%] h-8 w-8 rotate-[-28deg] opacity-60 sm:left-5 sm:h-10 sm:w-10" />
+            <HomeShellAccent kind="fan" className="bottom-3 right-4 h-8 w-8 rotate-[22deg] opacity-60 sm:bottom-4 sm:right-6 sm:h-10 sm:w-10" />
+            <div className="absolute inset-0 flex flex-col items-center justify-between gap-4 px-10 pb-12 pt-[22%] text-center text-sm leading-6 text-[#695c50] sm:px-14 sm:pb-16 lg:px-12 lg:pb-14">
+              <p
+                className="text-[10px] font-medium uppercase text-[#7b5d49]"
+                style={{ letterSpacing: "0.18em" }}
+              >
+                Daily practice
+              </p>
+              <p className="font-serif text-4xl leading-tight sm:text-5xl lg:text-4xl">
+                Steady<br /><em>breath</em>
+              </p>
+              <p>Gentle yoga, 4 rounds, 15 minutes</p>
+              <p className="max-w-64 text-xs leading-6">
+                Grounding, breath awareness, and a steadier rhythm for the day
+              </p>
             </div>
           </div>
         </div>
@@ -189,37 +210,36 @@ export default function HomePage() {
 
       <section
         id="about"
-        className="mx-auto max-w-6xl px-5 py-12 sm:px-8 lg:px-10 lg:py-20"
+        className="relative mx-auto max-w-6xl border-t border-[#d8c7b6] px-5 py-16 sm:px-8 lg:px-10 lg:py-24"
       >
-        <div className="mb-8 max-w-2xl">
-          <p className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.25em] text-[#7d5a49]">
-            <YogicMark symbol="lotus" className="h-4 w-5 text-[#a87835]" />
-            Who this is for
-          </p>
-          <h2 className="mt-3 font-serif text-4xl text-[#221b18] sm:text-5xl">
-            Supportive, grounded yoga for real life.
+        <div className="mb-12 grid gap-8 lg:grid-cols-[0.34fr_0.66fr]">
+          <SectionLabel label="About" />
+          <h2 className="max-w-3xl font-serif text-4xl leading-tight text-[#221b18] sm:text-5xl">
+            Supportive, grounded yoga for <em className="italic">real life.</em>
           </h2>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
-          {audiences.map((item) => (
-            <div
+        <ul className="grid max-w-4xl gap-x-16 gap-y-7 sm:grid-cols-2">
+          {audiences.map((item, index) => (
+            <li
               key={item}
-              className="rounded-[1.5rem] border border-[#e0c7a7] bg-[#fffaf5] p-5 shadow-[0_12px_24px_rgba(88,61,47,0.04)]"
+              className="flex items-start gap-3"
             >
+              <MotifBullet index={index} size="medium" />
               <p className="text-base leading-7 text-[#45392f]">{item}</p>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
 
       <section
         id="programmes"
-        className="relative overflow-hidden bg-[#efe3d3] py-12 sm:py-16 lg:py-20"
+        className="relative border-y border-[#ded6c8] bg-[#ede6d7] py-20 lg:py-28"
       >
+        <HomeShellAccent kind="fan" className="-left-5 top-2 h-16 w-16 rotate-[24deg] opacity-80 sm:-left-7 sm:h-20 sm:w-20" />
         <svg
           aria-hidden="true"
-          className="pointer-events-none absolute right-0 top-0 h-52 w-56 text-[#a87835]/20 sm:right-8"
+          className="pointer-events-none absolute right-0 top-0 h-52 w-56 text-[#a87835]/12 sm:right-8"
           viewBox="0 0 224 208"
           fill="none"
         >
@@ -231,43 +251,32 @@ export default function HomePage() {
           />
         </svg>
         <div className="relative z-10 mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
-          <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div className="mb-12 grid gap-8 lg:grid-cols-[0.34fr_0.66fr]">
+            <SectionLabel label="Practise with me" />
             <div>
-              <p className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.25em] text-[#7d5a49]">
-                <YogicMark symbol="sprout" className="h-4 w-5 text-[#a87835]" />
-                Featured programmes
-              </p>
-              <h2 className="mt-3 font-serif text-4xl text-[#221b18] sm:text-5xl">
-                Practice that meets you where you are.
+              <h2 className="font-serif text-4xl leading-tight text-[#221b18] sm:text-5xl">
+                Practice that meets you <em className="italic">where you are.</em>
               </h2>
+              <a
+                href="#booking"
+                className="mt-5 inline-flex text-sm font-semibold text-[#6e4735] underline decoration-[#b78b6f] underline-offset-4"
+              >
+                Book a discovery call
+              </a>
             </div>
-            <a
-              href="#booking"
-              className="text-sm font-semibold text-[#6e4735] underline decoration-[#b78b6f] underline-offset-4"
-            >
-              Book a discovery call
-            </a>
           </div>
 
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {programs.map((program) => (
               <article
                 key={program.name}
-                className="relative overflow-hidden rounded-[1.75rem] border border-[#dac0a2] bg-[#fffaf5] p-6 shadow-[0_12px_26px_rgba(88,61,47,0.04)]"
+                className="relative flex min-h-72 flex-col border border-[#d9d0bf] bg-[#fcf9f1] p-6 sm:p-7"
               >
-                {program.name === "Stress Relief & Breathwork" ||
-                program.name === "Yoga Philosophy Sessions" ? (
+                <div className="relative mb-7 h-[15px]">
                   <YogicMark
-                    symbol={
-                      program.name === "Stress Relief & Breathwork"
-                        ? "mandala"
-                        : "plume"
-                    }
-                    className="pointer-events-none absolute -right-1 -top-1 h-11 w-11 text-[#a87835]/45"
+                    symbol="mandala"
+                    className="pointer-events-none absolute -top-2 left-0 h-8 w-8 text-[#a58e73]/70"
                   />
-                ) : null}
-                <div className="mb-5 inline-flex rounded-full border border-[#d7b697] bg-[#f3e5d5] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#6d4a39]">
-                  {program.accent}
                 </div>
                 <h3 className="font-serif text-2xl text-[#261d19]">
                   {program.name}
@@ -275,25 +284,27 @@ export default function HomePage() {
                 <p className="mt-3 text-base leading-7 text-[#55473e]">
                   {program.description}
                 </p>
+                <div className="mt-auto pt-7">
+                  <a
+                    href="/programmes"
+                    aria-label={`Explore ${program.name}`}
+                    className="block border-t border-[#e1d9cc] pt-4 text-sm text-[#6e4735] underline underline-offset-4 hover:text-[#2d241d]"
+                  >
+                    Explore practice
+                  </a>
+                </div>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-12 sm:px-8 lg:px-10 lg:py-20">
-        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-          <div className="rounded-[2rem] border border-[#d9c3aa] bg-[#f0e2d2] p-6">
-            <p className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.25em] text-[#7d5a49]">
-              <YogicMark
-                symbol="meditation"
-                className="h-4 w-5 text-[#a87835]"
-              />
-              Meet Preetha
-            </p>
-            <div className="mt-6 overflow-hidden rounded-[1.5rem] border border-[#d8c5ae] bg-[radial-gradient(circle_at_top,_#f5e8d5,_#d6b08a_55%,_#b8845c_100%)] p-4">
-              <div className="h-52 rounded-[1.25rem] border border-[#e8d7c4] bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.5),_rgba(255,255,255,0)_55%)]" />
-            </div>
+      <section className="relative mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
+        <HomeShellAccent kind="spiral" className="-left-8 bottom-0 h-20 w-20 rotate-[-28deg] opacity-80 sm:-left-10 sm:h-28 sm:w-28" />
+        <div className="grid gap-10 lg:grid-cols-[0.42fr_0.58fr]">
+          <div>
+            <SectionLabel label="Meet Preetha" />
+            <div aria-hidden="true" className="mt-8 aspect-[4/5] bg-[#e9e2d4]" />
           </div>
 
           <div>
@@ -311,7 +322,7 @@ export default function HomePage() {
               more ease and focus in daily life, with a style that feels
               supportive, grounded, and deeply human.
             </p>
-            <div className="mt-8 rounded-[1.5rem] border border-[#d9c3aa] bg-[#fffaf5] p-5 text-[#433a34] shadow-[0_12px_26px_rgba(88,61,47,0.04)]">
+            <div className="mt-8 border-l border-[#c5a892] pl-5 text-[#433a34]">
               <p className="font-semibold text-[#2d241d]">Teaching style</p>
               <p className="mt-2 leading-7">
                 Warm, clear, and encouraging — blending movement, breathwork,
@@ -323,48 +334,41 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="booking" className="bg-[#f6efe7] py-12 sm:py-16 lg:py-20">
+      <section
+        id="booking"
+        className="relative border-y border-[#d8c7b6] bg-[#fbf6ee] py-16 sm:py-20 lg:py-24"
+      >
+        <HomeShellAccent kind="starfish" className="-right-3 bottom-1 h-14 w-14 rotate-[32deg] opacity-75 sm:right-6 sm:bottom-2 sm:h-20 sm:w-20" />
         <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
-          <div className="mb-8 max-w-2xl">
-            <p className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.25em] text-[#7d5a49]">
-              <YogicMark symbol="breath" className="h-4 w-5 text-[#a87835]" />
-              How booking works
-            </p>
-            <h2 className="mt-3 font-serif text-4xl text-[#221b18] sm:text-5xl">
+          <div className="mb-12 grid gap-8 lg:grid-cols-[0.34fr_0.66fr]">
+            <SectionLabel label="Booking" />
+            <h2 className="font-serif text-4xl leading-tight text-[#221b18] sm:text-5xl">
               Simple steps from first enquiry to your session.
             </h2>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          <ol className="max-w-2xl space-y-8 lg:ml-[34%]">
             {bookingSteps.map((step, index) => (
-              <div
+              <li
                 key={step}
-                className="rounded-[1.5rem] border border-[#d9c3aa] bg-[#fffaf5] p-5 shadow-[0_12px_26px_rgba(88,61,47,0.04)]"
+                className="flex items-start gap-3"
               >
-                <div className="mb-4 text-3xl font-serif text-[#7f5645]">
-                  0{index + 1}
-                </div>
-                <p className="text-base leading-7 text-[#45392f]">{step}</p>
-              </div>
+                <MotifBullet index={index} size="large" />
+                <p className="font-serif text-2xl leading-relaxed text-[#45392f]">{step}</p>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
       <section
         id="philosophy"
-        className="mx-auto max-w-6xl px-5 py-12 sm:px-8 lg:px-10 lg:py-20"
+        className="mx-auto max-w-6xl px-5 py-16 sm:px-8 lg:px-10 lg:py-24"
       >
-        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
-            <p className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.25em] text-[#7d5a49]">
-              <YogicMark
-                symbol="meditation"
-                className="h-4 w-5 text-[#a87835]"
-              />
-              Yoga philosophy
-            </p>
-            <h2 className="mt-3 font-serif text-4xl text-[#221b18] sm:text-5xl">
+            <SectionLabel label="Philosophy" />
+            <h2 className="mt-5 font-serif text-4xl leading-tight text-[#221b18] sm:text-5xl">
               Practice beyond the mat, into everyday life.
             </h2>
             <p className="mt-5 text-lg leading-8 text-[#56473d]">
@@ -372,23 +376,20 @@ export default function HomePage() {
               breath, attention, stillness, and the deeper meaning of practice.
             </p>
             <ul className="mt-6 space-y-3 text-base text-[#473d38]">
-              <li>• Yoga Beyond Posture</li>
-              <li>• Breath and Attention</li>
-              <li>• What Is Practice?</li>
-              <li>• Stillness in Daily Life</li>
+              {philosophyTopics.map((topic, index) => (
+                <li key={topic} className="flex items-start gap-2">
+                  <MotifBullet index={index} size="small" />
+                  <span>{topic}</span>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div className="rounded-[2rem] border border-[#d9c3aa] bg-[#efe3d3] p-6">
-            <div className="aspect-video overflow-hidden rounded-[1.5rem] border border-[#d4b798] bg-[linear-gradient(135deg,#d7b18b,#c18d64_35%,#8d6b57)] p-4">
-              <div className="flex h-full items-end justify-between">
-                <div className="h-20 w-20 rounded-full border-4 border-[#fffaf5]/70" />
-                <div className="h-14 w-14 rounded-full border-4 border-[#fffaf5]/70" />
-              </div>
-            </div>
-            <div className="mt-5 rounded-[1.25rem] bg-[#fffaf5] p-4">
-              <p className="font-semibold text-[#2d241d]">Reflection prompt</p>
-              <p className="mt-2 text-base leading-7 text-[#4f413b]">
+          <div className="flex flex-col justify-center border-t border-[#ded6c8] py-10 lg:border-l lg:border-t-0 lg:pl-12">
+            <YogicMark symbol="mandala" className="mb-8 h-16 w-16 text-[#9b8d72]/35" />
+            <div>
+              <p className="text-xs uppercase text-[#756859]">Reflection prompt</p>
+              <p className="mt-5 font-serif text-3xl italic leading-relaxed text-[#4f413b]">
                 Where in your day can you notice steadiness instead of striving?
               </p>
             </div>
@@ -396,60 +397,62 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="products" className="bg-[#efe6dc] py-12 sm:py-16 lg:py-20">
-        <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
-          <div className="mb-8 max-w-2xl">
-            <p className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.25em] text-[#7d5a49]">
-              <YogicMark symbol="sprout" className="h-4 w-5 text-[#a87835]" />
-              Products
-            </p>
-            <h2 className="mt-3 font-serif text-4xl text-[#221b18] sm:text-5xl">
-              Simple tools to keep the practice close.
+      <section
+        id="products"
+        className="relative border-y border-[#d8c7b6] bg-[#f2e8dc] py-16 sm:py-20 lg:py-24"
+      >
+        <HomeShellAccent kind="fan" className="-right-5 -top-4 h-20 w-20 rotate-[-24deg] opacity-85 sm:right-8 sm:h-24 sm:w-24" />
+        <div className="relative z-10 mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
+          <div className="mb-12 grid gap-8 lg:grid-cols-[0.34fr_0.66fr]">
+            <SectionLabel label="Products" />
+            <h2 className="font-serif text-4xl leading-tight text-[#221b18] sm:text-5xl">
+              Simple tools to keep the practice <em className="italic">close.</em>
             </h2>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-3">
             {products.map((item, index) => (
-              <div
+              <article
                 key={item}
-                className="rounded-[1.5rem] border border-[#d9c3aa] bg-[#fffaf5] p-6 shadow-[0_12px_26px_rgba(88,61,47,0.04)]"
+                className="flex flex-col border border-[#ddd2c2] bg-[#fcf9f1]"
               >
-                {index === 1 ? (
-                  <YogicMark
-                    symbol="breath"
-                    className="mb-4 h-7 w-10 text-[#a87835]/70"
-                  />
-                ) : null}
-                <p className="text-base leading-7 text-[#45392f]">{item}</p>
-              </div>
+                <div aria-hidden="true" className="m-4 mb-0 flex aspect-[4/3] items-center justify-center bg-[#eae3d5]">
+                  <div className={`aspect-[3/4] w-[38%] bg-[#f5f0e5] ${index === 1 ? "rotate-[-5deg]" : index === 2 ? "rotate-[5deg]" : ""}`} />
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <p className="mb-4 text-[10px] uppercase text-[#8a6b55]">{index === 0 ? "Card deck" : index === 1 ? "Printables" : "Starter kit"}</p>
+                  <h3 className="font-serif text-2xl leading-snug text-[#45392f]">{item}</h3>
+                </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 pb-16 pt-12 sm:px-8 lg:px-10 lg:pb-24 lg:pt-20">
-        <div className="rounded-[2rem] border border-[#d9c3aa] bg-[linear-gradient(135deg,#f5ebdd,#e8d1ae)] p-8 text-center shadow-[0_30px_80px_rgba(73,52,37,0.12)] sm:p-12">
-          <p className="flex items-center justify-center gap-2 text-sm font-semibold uppercase tracking-[0.25em] text-[#6d4a39]">
-            <YogicMark symbol="diya" className="h-4 w-5 text-[#a87835]" />
-            Begin your practice
-          </p>
+      <section className="border-b border-[#ded6c8] bg-[#eae2d2]">
+        <div className="relative mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
+          <HomeShellAccent kind="starfish" className="bottom-3 right-2 h-14 w-14 rotate-[-22deg] sm:right-8 sm:h-16 sm:w-16" />
+          <SectionLabel
+            label="Begin"
+            className="relative z-10"
+          />
           <h2 className="mt-4 font-serif text-4xl text-[#1f1714] sm:text-5xl">
             Book a first session and begin with calm.
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-[#4f4037]">
+          <p className="mt-4 max-w-2xl text-lg leading-8 text-[#4f4037]">
             Whether you are new to yoga or returning to a steadier rhythm, there
             is a place for you here.
           </p>
-          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <a
               href="#booking"
-              className="rounded-full bg-[#7f5645] px-6 py-3 font-semibold text-[#fffaf5] transition hover:bg-[#684733]"
+              className="border border-[#8c6652] bg-[#8c6652] px-6 py-3 font-semibold text-[#fffaf5] transition hover:bg-[#6f4f40]"
             >
               Book a Session
             </a>
             <a
               href="mailto:hello@mindfulyogi.com"
-              className="rounded-full border border-[#b68667] bg-[#fffaf5] px-6 py-3 font-semibold text-[#382e2a] transition hover:border-[#8f644c]"
+              className="px-2 py-3 font-medium text-[#382e2a] underline decoration-[#b68667] underline-offset-8 transition hover:text-[#8f644c]"
             >
               Send an Enquiry
             </a>

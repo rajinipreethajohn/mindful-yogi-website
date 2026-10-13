@@ -1,0 +1,16 @@
+.paper {
+  position: relative;
+  isolation: isolate;
+}
+
+.paper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  background-image: url("/paper-grain.svg");
+  background-size: 180px 180px;
+  mix-blend-mode: multiply;
+  opacity: 0.18;
+}
