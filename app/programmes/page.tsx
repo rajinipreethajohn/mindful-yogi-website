@@ -15,7 +15,8 @@ export const metadata: Metadata = {
 const offerings = [
   {
     name: "Private Yoga — 60 min",
-    audience: "Beginners, returning students, and adults wanting individual attention.",
+    audience:
+      "Beginners, returning students, and adults wanting individual attention.",
     happens:
       "Personalised yoga, breathwork, and mindful movement adapted to the individual.",
     duration: "60 minutes",
@@ -32,7 +33,8 @@ const offerings = [
   },
   {
     name: "Yoga for Calm & Stress Relief",
-    audience: "Busy adults seeking steadier routines, breath, movement, and rest.",
+    audience:
+      "Busy adults seeking steadier routines, breath, movement, and rest.",
     happens:
       "A short structured programme combining breath, movement, relaxation, and simple everyday practices.",
     duration: "Short structured programme",
@@ -57,13 +59,7 @@ const offerings = [
 
 const listMotifs = ["starfish", "spiral", "fan"] as const;
 
-function MotifBullet({
-  index,
-  children,
-}: {
-  index: number;
-  children: string;
-}) {
+function MotifBullet({ index, children }: { index: number; children: string }) {
   const isLong = children.length > 58;
 
   return (
@@ -90,20 +86,22 @@ function SectionLabel({ children }: { children: string }) {
 
 export default function ProgrammesPage() {
   return (
-    <main className={`${styles.paper} overflow-hidden bg-[#f5efe2] text-[#2d241d] antialiased [&_*]:tracking-normal`}>
+    <main
+      className={`${styles.paper} overflow-hidden bg-[#f5efe2] text-[#2d241d] antialiased [&_*]:tracking-normal`}
+    >
       <SiteNav active="work" />
 
       <section className="relative mx-auto max-w-6xl px-5 pb-20 pt-10 sm:px-8 lg:px-10 lg:pb-28 lg:pt-20">
         <div className="grid items-end gap-14 lg:grid-cols-[1fr_0.82fr]">
           <div className="relative pt-40 sm:pt-48">
             <Image
-              src="/mindful-yogi-line-art-boat-pose.svg"
+              src="/tree.png"
               alt=""
               width={400}
               height={400}
               priority
               aria-hidden="true"
-              className="pointer-events-none absolute -left-4 top-0 h-auto w-36 opacity-80 sm:-left-6 sm:w-44 lg:w-48"
+              className="pointer-events-none absolute -left-4 -top-14 h-auto w-36 opacity-80 sm:-left-6 sm:w-44 lg:-top-28 lg:w-48"
             />
             <p className="mb-8 max-w-md text-xs font-medium uppercase text-[#7b5d49]">
               Work with Preetha
@@ -132,8 +130,14 @@ export default function ProgrammesPage() {
           </div>
 
           <aside className="relative mx-auto w-full max-w-[28rem] aspect-[4/5] rounded-t-[48%] bg-[#e8e1d2] lg:mr-0">
-            <HomeShellAccent kind="spiral" className="left-5 top-[20%] h-10 w-10 rotate-[-18deg] opacity-55" />
-            <HomeShellAccent kind="fan" className="bottom-5 right-6 h-10 w-10 rotate-[22deg] opacity-60" />
+            <HomeShellAccent
+              kind="spiral"
+              className="left-5 top-[20%] h-10 w-10 rotate-[-18deg] opacity-55"
+            />
+            <HomeShellAccent
+              kind="fan"
+              className="bottom-5 right-6 h-10 w-10 rotate-[22deg] opacity-60"
+            />
             <div className="absolute inset-x-0 bottom-0 px-8 pb-10 text-[#5b4d43] sm:px-12 sm:pb-14 lg:px-10">
               <p className="text-[10px] font-medium uppercase text-[#7b5d49]">
                 Begin gently
@@ -153,8 +157,14 @@ export default function ProgrammesPage() {
         id="offerings"
         className="relative border-y border-[#ded6c8] bg-[#ede6d7] py-20 lg:py-28"
       >
-        <HomeShellAccent kind="fan" className="-left-5 top-8 h-16 w-16 rotate-[24deg] opacity-75 sm:-left-7 sm:h-20 sm:w-20" />
-        <HomeShellAccent kind="starfish" className="-right-3 bottom-10 h-16 w-16 rotate-[32deg] opacity-65 sm:right-8 sm:h-20 sm:w-20" />
+        <HomeShellAccent
+          kind="fan"
+          className="-left-5 top-8 h-16 w-16 rotate-[24deg] opacity-75 sm:-left-7 sm:h-20 sm:w-20"
+        />
+        <HomeShellAccent
+          kind="starfish"
+          className="-right-3 bottom-10 h-16 w-16 rotate-[32deg] opacity-65 sm:right-8 sm:h-20 sm:w-20"
+        />
         <div className="relative z-10 mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
           <div className="mb-12 grid gap-8 lg:grid-cols-[0.34fr_0.66fr]">
             <SectionLabel>Work with me</SectionLabel>
@@ -226,7 +236,10 @@ export default function ProgrammesPage() {
       </section>
 
       <section className="relative mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
-        <HomeShellAccent kind="spiral" className="-left-8 bottom-6 h-20 w-20 rotate-[-28deg] opacity-75 sm:-left-10 sm:h-28 sm:w-28" />
+        <HomeShellAccent
+          kind="spiral"
+          className="-left-8 bottom-6 h-20 w-20 rotate-[-28deg] opacity-75 sm:-left-10 sm:h-28 sm:w-28"
+        />
         <div className="grid gap-10 lg:grid-cols-[0.34fr_0.66fr]">
           <SectionLabel>How it works</SectionLabel>
           <div>
@@ -254,7 +267,8 @@ export default function ProgrammesPage() {
             <div>
               <SectionLabel>Care note</SectionLabel>
               <h2 className="mt-5 font-serif text-4xl leading-tight text-[#221b18] sm:text-5xl">
-                Supportive practice, held with <em className="italic">clear boundaries.</em>
+                Supportive practice, held with{" "}
+                <em className="italic">clear boundaries.</em>
               </h2>
               <p className="mt-5 text-lg leading-8 text-[#56473d]">
                 These offerings support steadiness, movement, breath awareness,
@@ -263,7 +277,10 @@ export default function ProgrammesPage() {
               </p>
             </div>
             <div className="flex flex-col justify-center border-t border-[#ded6c8] py-10 lg:border-l lg:border-t-0 lg:pl-12">
-              <YogicMark symbol="mandala" className="mb-8 h-16 w-16 text-[#9b8d72]/35" />
+              <YogicMark
+                symbol="mandala"
+                className="mb-8 h-16 w-16 text-[#9b8d72]/35"
+              />
               <p className="font-serif text-3xl italic leading-relaxed text-[#4f413b]">
                 Choose what feels steady, spacious, and possible for real life.
               </p>
@@ -274,7 +291,10 @@ export default function ProgrammesPage() {
 
       <section className="border-b border-[#ded6c8] bg-[#eae2d2]">
         <div className="relative mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
-          <HomeShellAccent kind="starfish" className="bottom-3 right-2 h-14 w-14 rotate-[-22deg] sm:right-8 sm:h-16 sm:w-16" />
+          <HomeShellAccent
+            kind="starfish"
+            className="bottom-3 right-2 h-14 w-14 rotate-[-22deg] sm:right-8 sm:h-16 sm:w-16"
+          />
           <SectionLabel>Begin</SectionLabel>
           <h2 className="mt-4 font-serif text-4xl text-[#1f1714] sm:text-5xl">
             Wondering where to begin?

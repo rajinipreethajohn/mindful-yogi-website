@@ -55,13 +55,13 @@ export default function PhilosophyPage() {
         <div className="grid items-end gap-14 lg:grid-cols-[1fr_0.82fr]">
           <div className="relative pt-40 sm:pt-48">
             <Image
-              src="/mindful-yogi-line-art-vrikshasana.svg"
+              src="/tree.png"
               alt=""
               width={400}
               height={400}
               priority
               aria-hidden="true"
-              className="pointer-events-none absolute -left-4 top-0 h-auto w-36 opacity-80 sm:-left-6 sm:w-44 lg:w-48"
+              className="pointer-events-none absolute -left-4 -top-14 h-auto w-36 opacity-80 sm:-left-6 sm:w-44 lg:-top-28 lg:w-48"
             />
             <p className="mb-8 max-w-md text-xs font-medium uppercase text-[#7b5d49]">
               Understanding yoga

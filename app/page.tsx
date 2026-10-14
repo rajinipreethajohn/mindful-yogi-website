@@ -84,7 +84,10 @@ function MotifBullet({
   };
 
   return (
-    <span aria-hidden="true" className={`relative mt-1 shrink-0 ${dimensions[size]}`}>
+    <span
+      aria-hidden="true"
+      className={`relative mt-1 shrink-0 ${dimensions[size]}`}
+    >
       <HomeShellAccent
         kind={listMotifs[index % listMotifs.length]}
         className="inset-0 h-full w-full [&_path]:stroke-[#ad9679] [&_path]:[stroke-opacity:0.8] [&_path]:[stroke-width:2]"
@@ -101,9 +104,7 @@ function SectionLabel({
   className?: string;
 }) {
   return (
-    <p
-      className={`text-xs font-medium uppercase text-[#827565] ${className}`}
-    >
+    <p className={`text-xs font-medium uppercase text-[#827565] ${className}`}>
       {label}
     </p>
   );
@@ -111,7 +112,9 @@ function SectionLabel({
 
 export default function HomePage() {
   return (
-    <main className={`${styles.paper} overflow-hidden bg-[#f5efe2] text-[#2d241d] antialiased [&_*]:tracking-normal`}>
+    <main
+      className={`${styles.paper} overflow-hidden bg-[#f5efe2] text-[#2d241d] antialiased [&_*]:tracking-normal`}
+    >
       <SiteNav active="home" />
 
       <section className="relative mx-auto max-w-6xl px-5 pb-20 pt-10 sm:px-8 lg:px-10 lg:pb-28 lg:pt-20">
@@ -124,13 +127,15 @@ export default function HomePage() {
               height={780}
               priority
               aria-hidden="true"
-              className="pointer-events-none absolute -left-5 top-0 h-auto w-48 opacity-80 sm:-left-7 sm:w-56 lg:-left-8 lg:w-64"
+              className="pointer-events-none absolute -left-5 -top-6 h-auto w-52 opacity-80 sm:-left-7 sm:w-60 lg:-left-8 lg:w-72"
             />
             <p className="mb-8 max-w-md text-xs font-medium uppercase text-[#7b5d49]">
               Philosophy, practice, and mindful movement
             </p>
             <h1 className="max-w-3xl font-serif text-5xl leading-[0.94] text-[#1d1714] sm:text-6xl lg:text-[5rem]">
-              Yoga, beyond<br />the <em className="italic">mat.</em>
+              Yoga, beyond
+              <br />
+              the <em className="italic">mat.</em>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-[#574739]">
               Private yoga, mindful movement and the philosophy behind the
@@ -158,14 +163,22 @@ export default function HomePage() {
           </div>
 
           <div className="relative aspect-[4/5] rounded-t-[48%] bg-[#e8e1d2]">
-            <HomeShellAccent kind="fan" className="left-3 top-[48%] h-8 w-8 rotate-[-28deg] opacity-60 sm:left-5 sm:h-10 sm:w-10" />
-            <HomeShellAccent kind="fan" className="bottom-3 right-4 h-8 w-8 rotate-[22deg] opacity-60 sm:bottom-4 sm:right-6 sm:h-10 sm:w-10" />
+            <HomeShellAccent
+              kind="fan"
+              className="left-3 top-[48%] h-8 w-8 rotate-[-28deg] opacity-60 sm:left-5 sm:h-10 sm:w-10"
+            />
+            <HomeShellAccent
+              kind="fan"
+              className="bottom-3 right-4 h-8 w-8 rotate-[22deg] opacity-60 sm:bottom-4 sm:right-6 sm:h-10 sm:w-10"
+            />
             <div className="absolute inset-0 flex flex-col items-center justify-between gap-4 px-10 pb-12 pt-[22%] text-center text-sm leading-6 text-[#695c50] sm:px-14 sm:pb-16 lg:px-12 lg:pb-14">
               <p className="text-[10px] font-medium uppercase text-[#7b5d49]">
                 Daily practice
               </p>
               <p className="font-serif text-4xl leading-tight sm:text-5xl lg:text-4xl">
-                Steady<br /><em>breath</em>
+                Steady
+                <br />
+                <em>breath</em>
               </p>
               <p>Gentle yoga, 4 rounds, 15 minutes</p>
               <p className="max-w-64 text-xs leading-6">
@@ -189,10 +202,7 @@ export default function HomePage() {
 
         <ul className="grid max-w-4xl gap-x-16 gap-y-7 sm:grid-cols-2">
           {audiences.map((item, index) => (
-            <li
-              key={item}
-              className="flex items-start gap-3"
-            >
+            <li key={item} className="flex items-start gap-3">
               <MotifBullet index={index} size="medium" />
               <p className="text-base leading-7 text-[#45392f]">{item}</p>
             </li>
@@ -204,7 +214,10 @@ export default function HomePage() {
         id="programmes"
         className="relative border-y border-[#ded6c8] bg-[#ede6d7] py-20 lg:py-28"
       >
-        <HomeShellAccent kind="fan" className="-left-5 top-2 h-16 w-16 rotate-[24deg] opacity-80 sm:-left-7 sm:h-20 sm:w-20" />
+        <HomeShellAccent
+          kind="fan"
+          className="-left-5 top-2 h-16 w-16 rotate-[24deg] opacity-80 sm:-left-7 sm:h-20 sm:w-20"
+        />
         <svg
           aria-hidden="true"
           className="pointer-events-none absolute right-0 top-0 h-52 w-56 text-[#a87835]/12 sm:right-8"
@@ -293,11 +306,17 @@ export default function HomePage() {
       </section>
 
       <section className="relative mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
-        <HomeShellAccent kind="spiral" className="-left-8 bottom-0 h-20 w-20 rotate-[-28deg] opacity-80 sm:-left-10 sm:h-28 sm:w-28" />
+        <HomeShellAccent
+          kind="spiral"
+          className="-left-8 bottom-0 h-20 w-20 rotate-[-28deg] opacity-80 sm:-left-10 sm:h-28 sm:w-28"
+        />
         <div className="grid gap-10 lg:grid-cols-[0.42fr_0.58fr]">
           <div>
             <SectionLabel label="Meet Preetha" />
-            <div aria-hidden="true" className="mt-8 aspect-[4/5] bg-[#e9e2d4]" />
+            <div
+              aria-hidden="true"
+              className="mt-8 aspect-[4/5] bg-[#e9e2d4]"
+            />
           </div>
 
           <div>
@@ -331,7 +350,10 @@ export default function HomePage() {
         id="booking"
         className="relative border-y border-[#d8c7b6] bg-[#fbf6ee] py-16 sm:py-20 lg:py-24"
       >
-        <HomeShellAccent kind="starfish" className="-right-3 bottom-1 h-14 w-14 rotate-[32deg] opacity-75 sm:right-6 sm:bottom-2 sm:h-20 sm:w-20" />
+        <HomeShellAccent
+          kind="starfish"
+          className="-right-3 bottom-1 h-14 w-14 rotate-[32deg] opacity-75 sm:right-6 sm:bottom-2 sm:h-20 sm:w-20"
+        />
         <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
           <div className="mb-12 grid gap-8 lg:grid-cols-[0.34fr_0.66fr]">
             <SectionLabel label="Booking" />
@@ -342,12 +364,11 @@ export default function HomePage() {
 
           <ol className="max-w-2xl space-y-8 lg:ml-[34%]">
             {bookingSteps.map((step, index) => (
-              <li
-                key={step}
-                className="flex items-start gap-3"
-              >
+              <li key={step} className="flex items-start gap-3">
                 <MotifBullet index={index} size="large" />
-                <p className="font-serif text-2xl leading-relaxed text-[#45392f]">{step}</p>
+                <p className="font-serif text-2xl leading-relaxed text-[#45392f]">
+                  {step}
+                </p>
               </li>
             ))}
           </ol>
@@ -379,9 +400,14 @@ export default function HomePage() {
           </div>
 
           <div className="flex flex-col justify-center border-t border-[#ded6c8] py-10 lg:border-l lg:border-t-0 lg:pl-12">
-            <YogicMark symbol="mandala" className="mb-8 h-16 w-16 text-[#9b8d72]/35" />
+            <YogicMark
+              symbol="mandala"
+              className="mb-8 h-16 w-16 text-[#9b8d72]/35"
+            />
             <div>
-              <p className="text-xs uppercase text-[#756859]">Reflection prompt</p>
+              <p className="text-xs uppercase text-[#756859]">
+                Reflection prompt
+              </p>
               <p className="mt-5 font-serif text-3xl italic leading-relaxed text-[#4f413b]">
                 Where in your day can you notice steadiness instead of striving?
               </p>
@@ -422,12 +448,16 @@ export default function HomePage() {
         id="products"
         className="relative border-y border-[#d8c7b6] bg-[#f2e8dc] py-16 sm:py-20 lg:py-24"
       >
-        <HomeShellAccent kind="fan" className="-right-5 -top-4 h-20 w-20 rotate-[-24deg] opacity-85 sm:right-8 sm:h-24 sm:w-24" />
+        <HomeShellAccent
+          kind="fan"
+          className="-right-5 -top-4 h-20 w-20 rotate-[-24deg] opacity-85 sm:right-8 sm:h-24 sm:w-24"
+        />
         <div className="relative z-10 mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
           <div className="mb-12 grid gap-8 lg:grid-cols-[0.34fr_0.66fr]">
             <SectionLabel label="Cards" />
             <h2 className="font-serif text-4xl leading-tight text-[#221b18] sm:text-5xl">
-              Simple tools to keep the practice <em className="italic">close.</em>
+              Simple tools to keep the practice{" "}
+              <em className="italic">close.</em>
             </h2>
           </div>
 
@@ -437,12 +467,25 @@ export default function HomePage() {
                 key={item}
                 className="flex flex-col border border-[#ddd2c2] bg-[#fcf9f1]"
               >
-                <div aria-hidden="true" className="m-4 mb-0 flex aspect-[4/3] items-center justify-center bg-[#eae3d5]">
-                  <div className={`aspect-[3/4] w-[38%] bg-[#f5f0e5] ${index === 1 ? "rotate-[-5deg]" : index === 2 ? "rotate-[5deg]" : ""}`} />
+                <div
+                  aria-hidden="true"
+                  className="m-4 mb-0 flex aspect-[4/3] items-center justify-center bg-[#eae3d5]"
+                >
+                  <div
+                    className={`aspect-[3/4] w-[38%] bg-[#f5f0e5] ${index === 1 ? "rotate-[-5deg]" : index === 2 ? "rotate-[5deg]" : ""}`}
+                  />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
-                  <p className="mb-4 text-[10px] uppercase text-[#8a6b55]">{index === 0 ? "Card deck" : index === 1 ? "Printables" : "Starter kit"}</p>
-                  <h3 className="font-serif text-2xl leading-snug text-[#45392f]">{item}</h3>
+                  <p className="mb-4 text-[10px] uppercase text-[#8a6b55]">
+                    {index === 0
+                      ? "Card deck"
+                      : index === 1
+                        ? "Printables"
+                        : "Starter kit"}
+                  </p>
+                  <h3 className="font-serif text-2xl leading-snug text-[#45392f]">
+                    {item}
+                  </h3>
                 </div>
               </article>
             ))}
@@ -452,11 +495,11 @@ export default function HomePage() {
 
       <section className="border-b border-[#ded6c8] bg-[#eae2d2]">
         <div className="relative mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
-          <HomeShellAccent kind="starfish" className="bottom-3 right-2 h-14 w-14 rotate-[-22deg] sm:right-8 sm:h-16 sm:w-16" />
-          <SectionLabel
-            label="Begin"
-            className="relative z-10"
+          <HomeShellAccent
+            kind="starfish"
+            className="bottom-3 right-2 h-14 w-14 rotate-[-22deg] sm:right-8 sm:h-16 sm:w-16"
           />
+          <SectionLabel label="Begin" className="relative z-10" />
           <h2 className="mt-4 font-serif text-4xl text-[#1f1714] sm:text-5xl">
             Book a first session and begin with calm.
           </h2>

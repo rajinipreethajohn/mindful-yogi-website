@@ -53,20 +53,22 @@ function SectionLabel({ children }: { children: string }) {
 
 export default function PracticePage() {
   return (
-    <main className={`${styles.paper} overflow-hidden bg-[#f5efe2] text-[#2d241d] antialiased [&_*]:tracking-normal`}>
+    <main
+      className={`${styles.paper} overflow-hidden bg-[#f5efe2] text-[#2d241d] antialiased [&_*]:tracking-normal`}
+    >
       <SiteNav active="practice" />
 
       <section className="relative mx-auto max-w-6xl px-5 pb-20 pt-10 sm:px-8 lg:px-10 lg:pb-28 lg:pt-20">
         <div className="grid items-end gap-14 lg:grid-cols-[1fr_0.82fr]">
           <div className="relative pt-40 sm:pt-48">
             <Image
-              src="/mindful-yogi-line-art-downward-facing-dog.svg"
+              src="/tree.png"
               alt=""
               width={400}
               height={400}
               priority
               aria-hidden="true"
-              className="pointer-events-none absolute -left-4 top-0 h-auto w-36 opacity-80 sm:-left-6 sm:w-44 lg:w-48"
+              className="pointer-events-none absolute -left-4 -top-14 h-auto w-36 opacity-80 sm:-left-6 sm:w-44 lg:-top-28 lg:w-48"
             />
             <p className="mb-8 max-w-md text-xs font-medium uppercase text-[#7b5d49]">
               Experiencing yoga
@@ -82,8 +84,14 @@ export default function PracticePage() {
           </div>
 
           <aside className="relative mx-auto aspect-[4/5] w-full max-w-[28rem] rounded-t-[48%] bg-[#e8e1d2] lg:mr-0">
-            <HomeShellAccent kind="spiral" className="left-5 top-[20%] h-10 w-10 rotate-[-18deg] opacity-55" />
-            <HomeShellAccent kind="fan" className="bottom-5 right-6 h-10 w-10 rotate-[22deg] opacity-60" />
+            <HomeShellAccent
+              kind="spiral"
+              className="left-5 top-[20%] h-10 w-10 rotate-[-18deg] opacity-55"
+            />
+            <HomeShellAccent
+              kind="fan"
+              className="bottom-5 right-6 h-10 w-10 rotate-[22deg] opacity-60"
+            />
             <div className="absolute inset-x-0 bottom-0 px-8 pb-10 text-[#5b4d43] sm:px-12 sm:pb-14 lg:px-10">
               <p className="text-[10px] font-medium uppercase text-[#7b5d49]">
                 Coming soon
@@ -101,7 +109,10 @@ export default function PracticePage() {
       </section>
 
       <section className="relative border-y border-[#ded6c8] bg-[#ede6d7] py-20 lg:py-28">
-        <HomeShellAccent kind="fan" className="-left-5 top-8 h-16 w-16 rotate-[24deg] opacity-75 sm:-left-7 sm:h-20 sm:w-20" />
+        <HomeShellAccent
+          kind="fan"
+          className="-left-5 top-8 h-16 w-16 rotate-[24deg] opacity-75 sm:-left-7 sm:h-20 sm:w-20"
+        />
         <div className="relative z-10 mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
           <div className="mb-12 grid gap-8 lg:grid-cols-[0.34fr_0.66fr]">
             <SectionLabel>Reserved sections</SectionLabel>
@@ -110,8 +121,8 @@ export default function PracticePage() {
                 A quiet library for embodied learning.
               </h2>
               <p className="mt-5 max-w-2xl text-lg leading-8 text-[#574739]">
-                This pass keeps the page introductory, with clear spaces for
-                the practice areas that will be built out later.
+                This pass keeps the page introductory, with clear spaces for the
+                practice areas that will be built out later.
               </p>
             </div>
           </div>
