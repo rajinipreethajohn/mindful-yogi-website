@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import YogicMark from "@/components/YogicMark";
 import HomeShellAccent from "@/components/HomeShellAccent";
+import SiteNav from "@/components/SiteNav";
 import styles from "../home.module.css";
 
 export const metadata: Metadata = {
@@ -12,70 +14,45 @@ export const metadata: Metadata = {
 
 const offerings = [
   {
-    name: "Beginner Yoga Foundations",
-    intro:
-      "A welcoming start for anyone new to yoga or returning after time away. Build familiarity at an unhurried pace, with room to ask questions and find what feels comfortable.",
-    details: [
-      "Foundational postures and gentle transitions",
-      "Breath awareness and simple ways to practise at home",
-    ],
-    note: "No previous yoga experience is needed.",
+    name: "Private Yoga — 60 min",
+    audience: "Beginners, returning students, and adults wanting individual attention.",
+    happens:
+      "Personalised yoga, breathwork, and mindful movement adapted to the individual.",
+    duration: "60 minutes",
+    price: "Price to be confirmed",
   },
   {
-    name: "Stress Relief & Breathwork",
-    intro:
-      "A quieter space in a full day. Gentle movement, guided breathing, relaxation, and stillness can help you explore a calmer everyday rhythm.",
-    details: [
-      "Accessible movement and guided breath practices",
-      "Simple moments of relaxation to revisit in daily life",
-    ],
-    note: "Practices are adapted to your comfort and experience.",
+    name: "Beginner Foundations — 5 Sessions",
+    audience:
+      "Someone who wants to learn yoga properly rather than attend disconnected drop-in classes.",
+    happens:
+      "A structured introduction to essential postures, breath awareness, safe transitions, and home practice.",
+    duration: "5 sessions",
+    price: "Package price to be confirmed",
   },
   {
-    name: "Gentle Back-Care Yoga",
-    intro:
-      "A considered, low-pressure practice exploring gentle mobility, posture awareness, and relaxation around the back. Movements are invitations, never something to push through.",
-    details: [
-      "Supported movement within a comfortable range",
-      "Breath and body awareness at your own pace",
-    ],
-    note: "This is general wellbeing practice, not diagnosis or treatment for back pain or injury. Please seek advice from a qualified healthcare professional about health concerns.",
+    name: "Yoga for Calm & Stress Relief",
+    audience: "Busy adults seeking steadier routines, breath, movement, and rest.",
+    happens:
+      "A short structured programme combining breath, movement, relaxation, and simple everyday practices.",
+    duration: "Short structured programme",
+    price: "Price to be confirmed",
   },
   {
-    name: "Women’s Wellbeing Yoga",
-    intro:
-      "Supportive movement, breath, and reflection for stress, energy, and body awareness. Sessions make space for your experience without assumptions or a one-size-fits-all approach.",
-    details: [
-      "Gentle movement and practices for self-awareness",
-      "Time to reflect on what feels supportive to you",
-    ],
-    note: "A complementary wellbeing practice, not treatment for PCOS, hormonal concerns, or any medical condition.",
-  },
-  {
-    name: "Private 1:1 Yoga",
-    intro:
-      "Personal guidance shaped around your experience and intentions, whether you are building confidence, exploring breath and movement, or finding a regular practice that fits your life.",
-    details: [
-      "A conversation about your interests before we begin",
-      "A session paced and adapted to your needs",
-    ],
-    note: "Available online or in person, subject to location.",
-  },
-  {
-    name: "Yoga Philosophy Sessions",
-    intro:
-      "Thoughtful, accessible conversations about yoga beyond postures, rooted in Indian yogic traditions and connected to the questions of everyday life.",
-    details: [
-      "Breath, attention, stillness, and the meaning of practice",
-      "Ideas explored with curiosity and contemporary context",
-    ],
-    note: "A reflective session; no prior study is needed.",
+    name: "Yoga Beyond the Mat — 1:1 Philosophy",
+    audience:
+      "Curious students who want yoga philosophy, Sanskrit ideas, and daily life explored clearly.",
+    happens:
+      "Conversation-led study of yogic ideas, language, and reflection, grounded in Indian cultural familiarity.",
+    duration: "60 minutes",
+    price: "Price to be confirmed",
   },
 ] satisfies Array<{
   name: string;
-  intro: string;
-  details: string[];
-  note: string;
+  audience: string;
+  happens: string;
+  duration: string;
+  price: string;
 }>;
 
 const listMotifs = ["starfish", "spiral", "fan"] as const;
@@ -114,70 +91,29 @@ function SectionLabel({ children }: { children: string }) {
 export default function ProgrammesPage() {
   return (
     <main className={`${styles.paper} overflow-hidden bg-[#f5efe2] text-[#2d241d] antialiased [&_*]:tracking-normal`}>
-      <header className="mx-auto max-w-6xl px-5 py-7 sm:px-8 lg:px-10">
-        <nav className="flex items-center justify-between gap-4 border-b border-[#d8c7b6] pb-5">
-          <Link
-            href="/"
-            className="pr-4 font-serif text-xl text-[#251d19]"
-          >
-            Mindful Yogi
-          </Link>
-          <div className="hidden items-center gap-6 text-sm font-medium text-[#4c3d33] md:flex md:gap-8">
-            <Link
-              href="/#about"
-              className="px-1 transition hover:text-[#7b4f38]"
-            >
-              About
-            </Link>
-            <a
-              href="#offerings"
-              className="px-1 text-[#7b4f38] transition hover:text-[#4c3d33]"
-              aria-current="page"
-            >
-              Programmes
-            </a>
-            <Link
-              href="/#booking"
-              className="px-1 transition hover:text-[#7b4f38]"
-            >
-              Booking
-            </Link>
-            <Link
-              href="/#philosophy"
-              className="px-1 transition hover:text-[#7b4f38]"
-            >
-              Philosophy
-            </Link>
-            <Link
-              href="/#products"
-              className="px-1 transition hover:text-[#7b4f38]"
-            >
-              Products
-            </Link>
-          </div>
-          <a
-            href="mailto:hello@mindfulyogi.com"
-            className="border border-[#8c6652] bg-[#8c6652] px-4 py-2 text-sm font-semibold text-[#fffaf5] transition hover:bg-[#6f4f40]"
-          >
-            Send an Enquiry
-          </a>
-        </nav>
-      </header>
+      <SiteNav active="work" />
 
       <section className="relative mx-auto max-w-6xl px-5 pb-20 pt-10 sm:px-8 lg:px-10 lg:pb-28 lg:pt-20">
-        <HomeShellAccent kind="starfish" className="-left-6 top-14 h-28 w-28 rotate-[-16deg] opacity-35 sm:left-0 sm:h-36 sm:w-36 lg:h-44 lg:w-44" />
         <div className="grid items-end gap-14 lg:grid-cols-[1fr_0.82fr]">
-          <div className="relative pt-24 sm:pt-32">
+          <div className="relative pt-40 sm:pt-48">
+            <Image
+              src="/mindful-yogi-line-art-boat-pose.svg"
+              alt=""
+              width={400}
+              height={400}
+              priority
+              aria-hidden="true"
+              className="pointer-events-none absolute -left-4 top-0 h-auto w-36 opacity-80 sm:-left-6 sm:w-44 lg:w-48"
+            />
             <p className="mb-8 max-w-md text-xs font-medium uppercase text-[#7b5d49]">
               Work with Preetha
             </p>
             <h1 className="max-w-3xl font-serif text-5xl leading-[0.94] text-[#1d1714] sm:text-6xl lg:text-[5rem]">
-              Find a practice that feels <em className="italic">like yours.</em>
+              Choose a way to practise with <em className="italic">depth.</em>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[#574739]">
-              From a first gentle yoga class to reflective philosophy sessions,
-              each offering makes space for steadiness, curiosity, and your own
-              pace.
+              A small set of considered offers for private yoga, beginner
+              foundations, calm, and philosophy beyond the mat.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a
@@ -187,7 +123,7 @@ export default function ProgrammesPage() {
                 Explore Offerings
               </a>
               <Link
-                href="/#booking"
+                href="/#programmes"
                 className="px-2 py-3 text-center font-medium text-[#3d2e27] underline decoration-[#caa98c] underline-offset-8 transition hover:text-[#7b4f38]"
               >
                 Book a Session
@@ -199,10 +135,7 @@ export default function ProgrammesPage() {
             <HomeShellAccent kind="spiral" className="left-5 top-[20%] h-10 w-10 rotate-[-18deg] opacity-55" />
             <HomeShellAccent kind="fan" className="bottom-5 right-6 h-10 w-10 rotate-[22deg] opacity-60" />
             <div className="absolute inset-x-0 bottom-0 px-8 pb-10 text-[#5b4d43] sm:px-12 sm:pb-14 lg:px-10">
-              <p
-                className="text-[10px] font-medium uppercase text-[#7b5d49]"
-                style={{ letterSpacing: "0.18em" }}
-              >
+              <p className="text-[10px] font-medium uppercase text-[#7b5d49]">
                 Begin gently
               </p>
               <p className="mt-4 max-w-sm font-serif text-3xl leading-snug text-[#2d241d] sm:text-4xl">
@@ -224,23 +157,24 @@ export default function ProgrammesPage() {
         <HomeShellAccent kind="starfish" className="-right-3 bottom-10 h-16 w-16 rotate-[32deg] opacity-65 sm:right-8 sm:h-20 sm:w-20" />
         <div className="relative z-10 mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
           <div className="mb-12 grid gap-8 lg:grid-cols-[0.34fr_0.66fr]">
-            <SectionLabel>Ways to practise</SectionLabel>
+            <SectionLabel>Work with me</SectionLabel>
             <div>
               <h2 className="font-serif text-4xl leading-tight text-[#221b18] sm:text-5xl">
-                Six ways to work <em className="italic">together.</em>
+                Four clear doorways into yoga.
               </h2>
               <p className="mt-5 max-w-2xl text-lg leading-8 text-[#574739]">
-                Choose the doorway that feels closest to where you are now.
-                Each offering can be kept soft, practical, and responsive.
+                Each offer is spacious, practical, and rooted in the connection
+                between philosophy and practice. No medical claims, no generic
+                drop-in menu.
               </p>
             </div>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {offerings.map((offering, index) => (
+          <div className="grid gap-5 md:grid-cols-2">
+            {offerings.map((offering) => (
               <article
                 key={offering.name}
-                className="relative flex min-h-[34rem] flex-col border border-[#d9d0bf] bg-[#fcf9f1] p-6 sm:p-7"
+                className="relative flex min-h-[31rem] flex-col border border-[#d9d0bf] bg-[#fcf9f1] p-6 sm:p-7"
               >
                 <div className="relative mb-7 h-[15px]">
                   <YogicMark
@@ -251,27 +185,40 @@ export default function ProgrammesPage() {
                 <h3 className="font-serif text-2xl leading-tight text-[#261d19] sm:text-3xl">
                   {offering.name}
                 </h3>
-                <p className="mt-4 text-base leading-7 text-[#55473e]">
-                  {offering.intro}
-                </p>
-                <div className="mt-6">
-                  <p className="text-xs font-medium uppercase text-[#7d5a49]">
-                    We may explore
-                  </p>
-                  <ul className="mt-4 space-y-3 text-sm leading-6 text-[#51443b]">
-                    {offering.details.map((detail, detailIndex) => (
-                      <MotifBullet
-                        key={detail}
-                        index={index + detailIndex}
-                      >
-                        {detail}
-                      </MotifBullet>
-                    ))}
-                  </ul>
-                </div>
-                <p className="mt-auto border-t border-[#e1d9cc] pt-5 text-sm leading-6 text-[#725c4d]">
-                  {offering.note}
-                </p>
+                <dl className="mt-5 space-y-5 text-sm leading-6 text-[#51443b]">
+                  <div>
+                    <dt className="text-xs font-medium uppercase text-[#7d5a49]">
+                      Who it is for
+                    </dt>
+                    <dd className="mt-1">{offering.audience}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-xs font-medium uppercase text-[#7d5a49]">
+                      What happens
+                    </dt>
+                    <dd className="mt-1">{offering.happens}</dd>
+                  </div>
+                  <div className="grid gap-4 border-t border-[#e1d9cc] pt-5 sm:grid-cols-2">
+                    <div>
+                      <dt className="text-xs font-medium uppercase text-[#7d5a49]">
+                        Duration
+                      </dt>
+                      <dd className="mt-1">{offering.duration}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-xs font-medium uppercase text-[#7d5a49]">
+                        Price
+                      </dt>
+                      <dd className="mt-1">{offering.price}</dd>
+                    </div>
+                  </div>
+                </dl>
+                <Link
+                  href="/#programmes"
+                  className="mt-auto border-t border-[#e1d9cc] pt-5 text-sm font-semibold text-[#6e4735] underline underline-offset-4 hover:text-[#2d241d]"
+                >
+                  Book this offer
+                </Link>
               </article>
             ))}
           </div>
@@ -290,7 +237,7 @@ export default function ProgrammesPage() {
               {[
                 "Tell me what you are looking for and what kind of support feels useful.",
                 "We choose a session or package that suits your pace, schedule, and comfort.",
-                "You receive a calendar invite, payment details, and a Google Meet link when online.",
+                "You receive a calendar invite and a Google Meet link when online.",
               ].map((step, index) => (
                 <MotifBullet key={step} index={index}>
                   {step}
@@ -363,13 +310,19 @@ export default function ProgrammesPage() {
               About
             </Link>
             <a href="#offerings" className="hover:text-[#7b4f38]">
-              Programmes
+              Work With Me
             </a>
-            <Link href="/#booking" className="hover:text-[#7b4f38]">
-              Booking
+            <Link href="/philosophy" className="hover:text-[#7b4f38]">
+              Philosophy
+            </Link>
+            <Link href="/practice" className="hover:text-[#7b4f38]">
+              Practice
             </Link>
             <Link href="/#products" className="hover:text-[#7b4f38]">
-              Products
+              Cards
+            </Link>
+            <Link href="/#programmes" className="hover:text-[#7b4f38]">
+              Book
             </Link>
           </div>
         </div>

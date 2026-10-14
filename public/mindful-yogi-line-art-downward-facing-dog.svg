@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" role="img" aria-labelledby="title">
+  <title id="title">Downward-facing dog line art</title>
+  <g stroke="#5A3E32" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M52 319c32 10 68 7 108-9"/>
+    <path d="M160 310c36-83 77-145 124-186"/>
+    <path d="M284 124c44 50 80 112 108 186"/>
+    <path d="M392 310c32 12 62 13 90 3"/>
+    <path d="M86 319c-31 29-65 44-102 45"/>
+    <path d="M-16 364c36 18 78 18 126 0"/>
+    <path d="M444 312c28 18 56 26 84 24"/>
+    <path d="M528 336c-33 17-68 22-105 13"/>
+    <path d="M199 233c-37 44-78 76-124 96"/>
+    <path d="M346 232c43 38 88 65 135 82"/>
+    <path d="M242 158c-35-18-72-22-111-12"/>
+    <path d="M131 146c32 22 59 52 81 88"/>
+    <path d="M314 158c37-18 76-22 118-10"/>
+    <path d="M432 148c-34 23-63 52-88 87"/>
+    <path d="M268 120c-8-24-2-45 19-64"/>
+    <path d="M287 56c15 19 21 40 17 64"/>
+    <path d="M28 380h344"/>
+  </g>
+</svg>

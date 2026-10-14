@@ -1,5 +1,8 @@
+import Image from "next/image";
+import Link from "next/link";
 import YogicMark from "@/components/YogicMark";
 import HomeShellAccent from "@/components/HomeShellAccent";
+import SiteNav from "@/components/SiteNav";
 import styles from "./home.module.css";
 
 const audiences = [
@@ -12,41 +15,43 @@ const audiences = [
 
 const programs = [
   {
-    name: "Beginner Yoga Foundations",
-    description:
-      "A welcoming path into posture, breath, and confidence-building for home practice.",
+    name: "Private Yoga — 60 min",
+    for: "Beginners, returning students, and anyone wanting personal guidance.",
+    happens:
+      "Personalised yoga, breathwork, and mindful movement adapted to your body, pace, and intentions.",
+    duration: "60 minutes",
+    price: "Price to be confirmed",
   },
   {
-    name: "Stress Relief & Breathwork",
-    description:
-      "Gentle movement and calming breath practices to help life feel less hurried.",
+    name: "Beginner Foundations — 5 Sessions",
+    for: "Someone who wants to learn yoga properly, step by step.",
+    happens:
+      "A structured introduction to posture, breath, basic sequencing, and simple home practice.",
+    duration: "5 sessions",
+    price: "Package price to be confirmed",
   },
   {
-    name: "Gentle Back-Care Yoga",
-    description:
-      "Supported movement, posture awareness, and ease for everyday mobility.",
+    name: "Yoga for Calm & Stress Relief",
+    for: "Busy adults seeking a steadier rhythm and quieter nervous system.",
+    happens:
+      "A short programme combining breath, gentle movement, relaxation, and practical rituals.",
+    duration: "Short structured programme",
+    price: "Price to be confirmed",
   },
   {
-    name: "Women’s Wellbeing Yoga",
-    description:
-      "Complementary support for stress, energy, and body awareness with care and context.",
-  },
-  {
-    name: "Private 1:1 Yoga",
-    description:
-      "Personal guidance in breath, confidence, and mindful practice, online or in person.",
-  },
-  {
-    name: "Yoga Philosophy Sessions",
-    description:
-      "Thoughtful exploration of practice, attention, stillness, and living with awareness.",
+    name: "Yoga Beyond the Mat — 1:1 Philosophy",
+    for: "Curious students who want the ideas behind the practice explained clearly.",
+    happens:
+      "Conversation-led exploration of yoga philosophy, Sanskrit concepts, and everyday life.",
+    duration: "60 minutes",
+    price: "Price to be confirmed",
   },
 ];
 
 const bookingSteps = [
   "Choose a session or package",
   "Pick a date and time that works for you",
-  "Confirm details and payment",
+  "Confirm the details",
   "Receive your calendar invite and Google Meet link",
 ];
 
@@ -107,82 +112,48 @@ function SectionLabel({
 export default function HomePage() {
   return (
     <main className={`${styles.paper} overflow-hidden bg-[#f5efe2] text-[#2d241d] antialiased [&_*]:tracking-normal`}>
-      <header className="mx-auto max-w-6xl px-5 py-7 sm:px-8 lg:px-10">
-        <nav className="flex items-center justify-between gap-4 border-b border-[#d8c7b6] pb-5">
-          <div className="flex items-center gap-4 pr-5">
-            <span className="font-serif text-xl text-[#251d19]">
-              Mindful Yogi
-            </span>
-          </div>
-
-          <div className="hidden items-center gap-6 text-sm font-medium text-[#4c3d33] md:flex md:gap-8">
-            <a href="#about" className="px-1 transition hover:text-[#7b4f38]">
-              About
-            </a>
-            <a
-              href="/programmes"
-              className="px-1 transition hover:text-[#7b4f38]"
-            >
-              Programmes
-            </a>
-            <a href="#booking" className="px-1 transition hover:text-[#7b4f38]">
-              Booking
-            </a>
-            <a
-              href="#philosophy"
-              className="px-1 transition hover:text-[#7b4f38]"
-            >
-              Philosophy
-            </a>
-            <a
-              href="#products"
-              className="px-1 transition hover:text-[#7b4f38]"
-            >
-              Products
-            </a>
-          </div>
-
-          <a
-            href="#booking"
-            className="border border-[#8c6652] bg-[#8c6652] px-4 py-2 text-sm font-semibold text-[#fffaf5] transition hover:bg-[#6f4f40]"
-          >
-            Book a Session
-          </a>
-        </nav>
-      </header>
+      <SiteNav active="home" />
 
       <section className="relative mx-auto max-w-6xl px-5 pb-20 pt-10 sm:px-8 lg:px-10 lg:pb-28 lg:pt-20">
         <div className="grid items-end gap-14 lg:grid-cols-[1.14fr_0.86fr]">
-          <div className="relative pt-40 sm:pt-48 lg:pt-56">
-            <HomeShellAccent kind="starfish" className="-left-6 top-0 h-36 w-36 rotate-[-16deg] opacity-45 sm:-left-10 sm:h-44 sm:w-44 lg:h-52 lg:w-52" />
+          <div className="relative pt-48 sm:pt-56 lg:pt-64">
+            <Image
+              src="/mindful-yogi-meditation-line-art-brown-transparent.png"
+              alt=""
+              width={829}
+              height={780}
+              priority
+              aria-hidden="true"
+              className="pointer-events-none absolute -left-5 top-0 h-auto w-48 opacity-80 sm:-left-7 sm:w-56 lg:-left-8 lg:w-64"
+            />
             <p className="mb-8 max-w-md text-xs font-medium uppercase text-[#7b5d49]">
-              Gentle movement, breathwork, and philosophy
+              Philosophy, practice, and mindful movement
             </p>
             <h1 className="max-w-3xl font-serif text-5xl leading-[0.94] text-[#1d1714] sm:text-6xl lg:text-[5rem]">
-              Less noise.<br />More <em className="italic">breath.</em>
+              Yoga, beyond<br />the <em className="italic">mat.</em>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-[#574739]">
-              Gentle yoga, breathwork, and philosophy for modern life — helping
-              you move with steadiness, find calm, and return to yourself.
+              Private yoga, mindful movement and the philosophy behind the
+              practice — taught with clarity, depth and respect for its roots.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <a
-                href="#booking"
+              <Link
+                href="/philosophy"
                 className="border border-[#8c6652] bg-[#8c6652] px-6 py-3 text-center font-semibold text-[#fffaf5] transition hover:bg-[#6f4f40]"
+              >
+                Explore Yoga
+              </Link>
+              <a
+                href="#programmes"
+                className="px-2 py-3 text-center font-medium text-[#3d2e27] underline decoration-[#caa98c] underline-offset-8 transition hover:text-[#7b4f38]"
               >
                 Book a Session
               </a>
-              <a
-                href="/programmes"
-                className="px-2 py-3 text-center font-medium text-[#3d2e27] underline decoration-[#caa98c] underline-offset-8 transition hover:text-[#7b4f38]"
-              >
-                Explore Programmes
-              </a>
             </div>
             <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 border-t border-[#d8c7b6] pt-5 text-sm text-[#5d473d]">
-              <span>Beginner-friendly</span>
-              <span>Breath + movement</span>
-              <span>Reflective practice</span>
+              <span>Private guidance</span>
+              <span>Sanskrit + philosophy</span>
+              <span>Practice for modern life</span>
             </div>
           </div>
 
@@ -190,10 +161,7 @@ export default function HomePage() {
             <HomeShellAccent kind="fan" className="left-3 top-[48%] h-8 w-8 rotate-[-28deg] opacity-60 sm:left-5 sm:h-10 sm:w-10" />
             <HomeShellAccent kind="fan" className="bottom-3 right-4 h-8 w-8 rotate-[22deg] opacity-60 sm:bottom-4 sm:right-6 sm:h-10 sm:w-10" />
             <div className="absolute inset-0 flex flex-col items-center justify-between gap-4 px-10 pb-12 pt-[22%] text-center text-sm leading-6 text-[#695c50] sm:px-14 sm:pb-16 lg:px-12 lg:pb-14">
-              <p
-                className="text-[10px] font-medium uppercase text-[#7b5d49]"
-                style={{ letterSpacing: "0.18em" }}
-              >
+              <p className="text-[10px] font-medium uppercase text-[#7b5d49]">
                 Daily practice
               </p>
               <p className="font-serif text-4xl leading-tight sm:text-5xl lg:text-4xl">
@@ -252,13 +220,13 @@ export default function HomePage() {
         </svg>
         <div className="relative z-10 mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
           <div className="mb-12 grid gap-8 lg:grid-cols-[0.34fr_0.66fr]">
-            <SectionLabel label="Practise with me" />
+            <SectionLabel label="Work with me" />
             <div>
               <h2 className="font-serif text-4xl leading-tight text-[#221b18] sm:text-5xl">
-                Practice that meets you <em className="italic">where you are.</em>
+                Clear offers for practice, breath, and study.
               </h2>
               <a
-                href="#booking"
+                href="#programmes"
                 className="mt-5 inline-flex text-sm font-semibold text-[#6e4735] underline decoration-[#b78b6f] underline-offset-4"
               >
                 Book a discovery call
@@ -270,7 +238,7 @@ export default function HomePage() {
             {programs.map((program) => (
               <article
                 key={program.name}
-                className="relative flex min-h-72 flex-col border border-[#d9d0bf] bg-[#fcf9f1] p-6 sm:p-7"
+                className="relative flex min-h-[28rem] flex-col border border-[#d9d0bf] bg-[#fcf9f1] p-6 sm:p-7"
               >
                 <div className="relative mb-7 h-[15px]">
                   <YogicMark
@@ -281,16 +249,41 @@ export default function HomePage() {
                 <h3 className="font-serif text-2xl text-[#261d19]">
                   {program.name}
                 </h3>
-                <p className="mt-3 text-base leading-7 text-[#55473e]">
-                  {program.description}
-                </p>
+                <dl className="mt-5 space-y-4 text-sm leading-6 text-[#55473e]">
+                  <div>
+                    <dt className="text-xs font-medium uppercase text-[#7d5a49]">
+                      Who it is for
+                    </dt>
+                    <dd className="mt-1">{program.for}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-xs font-medium uppercase text-[#7d5a49]">
+                      What happens
+                    </dt>
+                    <dd className="mt-1">{program.happens}</dd>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4 border-t border-[#e1d9cc] pt-4">
+                    <div>
+                      <dt className="text-xs font-medium uppercase text-[#7d5a49]">
+                        Duration
+                      </dt>
+                      <dd className="mt-1">{program.duration}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-xs font-medium uppercase text-[#7d5a49]">
+                        Price
+                      </dt>
+                      <dd className="mt-1">{program.price}</dd>
+                    </div>
+                  </div>
+                </dl>
                 <div className="mt-auto pt-7">
                   <a
-                    href="/programmes"
+                    href="#programmes"
                     aria-label={`Explore ${program.name}`}
                     className="block border-t border-[#e1d9cc] pt-4 text-sm text-[#6e4735] underline underline-offset-4 hover:text-[#2d241d]"
                   >
-                    Explore practice
+                    Book this offer
                   </a>
                 </div>
               </article>
@@ -372,8 +365,8 @@ export default function HomePage() {
               Practice beyond the mat, into everyday life.
             </h2>
             <p className="mt-5 text-lg leading-8 text-[#56473d]">
-              Thoughtful reflection, gentle inquiry, and accessible teachings on
-              breath, attention, stillness, and the deeper meaning of practice.
+              Philosophy is where we understand yoga: its language, roots,
+              questions, and living relevance beyond posture.
             </p>
             <ul className="mt-6 space-y-3 text-base text-[#473d38]">
               {philosophyTopics.map((topic, index) => (
@@ -392,7 +385,35 @@ export default function HomePage() {
               <p className="mt-5 font-serif text-3xl italic leading-relaxed text-[#4f413b]">
                 Where in your day can you notice steadiness instead of striving?
               </p>
+              <Link
+                href="/philosophy"
+                className="mt-8 inline-flex text-sm font-semibold text-[#6e4735] underline decoration-[#b78b6f] underline-offset-4"
+              >
+                Visit the philosophy library
+              </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-[#d8c7b6] bg-[#fbf6ee] py-16 sm:py-20 lg:py-24">
+        <div className="mx-auto grid max-w-6xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.34fr_0.66fr] lg:px-10">
+          <SectionLabel label="Practice" />
+          <div>
+            <h2 className="font-serif text-4xl leading-tight text-[#221b18] sm:text-5xl">
+              Practice is where yoga becomes embodied.
+            </h2>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-[#56473d]">
+              Asana, pranayama, meditation, and guided practices will live in a
+              separate learning space, so movement stays connected to meaning
+              without being hidden inside philosophy.
+            </p>
+            <Link
+              href="/practice"
+              className="mt-8 inline-flex text-sm font-semibold text-[#6e4735] underline decoration-[#b78b6f] underline-offset-4"
+            >
+              Visit the practice library
+            </Link>
           </div>
         </div>
       </section>
@@ -404,7 +425,7 @@ export default function HomePage() {
         <HomeShellAccent kind="fan" className="-right-5 -top-4 h-20 w-20 rotate-[-24deg] opacity-85 sm:right-8 sm:h-24 sm:w-24" />
         <div className="relative z-10 mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
           <div className="mb-12 grid gap-8 lg:grid-cols-[0.34fr_0.66fr]">
-            <SectionLabel label="Products" />
+            <SectionLabel label="Cards" />
             <h2 className="font-serif text-4xl leading-tight text-[#221b18] sm:text-5xl">
               Simple tools to keep the practice <em className="italic">close.</em>
             </h2>
@@ -445,7 +466,7 @@ export default function HomePage() {
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <a
-              href="#booking"
+              href="#programmes"
               className="border border-[#8c6652] bg-[#8c6652] px-6 py-3 font-semibold text-[#fffaf5] transition hover:bg-[#6f4f40]"
             >
               Book a Session
@@ -463,19 +484,16 @@ export default function HomePage() {
       <footer className="border-t border-[#d9c3aa] bg-[#f5efe8]">
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 text-sm text-[#4d3f37] sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-10">
           <div className="font-serif text-2xl text-[#221b18]">Mindful Yogi</div>
-          <div className="flex gap-6">
-            <a href="#about" className="hover:text-[#7b4f38]">
-              About
-            </a>
-            <a href="/programmes" className="hover:text-[#7b4f38]">
-              Programmes
-            </a>
-            <a href="#booking" className="hover:text-[#7b4f38]">
-              Booking
-            </a>
-            <a href="#products" className="hover:text-[#7b4f38]">
-              Products
-            </a>
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            <Link href="/philosophy" className="hover:text-[#7b4f38]">
+              Philosophy
+            </Link>
+            <Link href="/practice" className="hover:text-[#7b4f38]">
+              Practice
+            </Link>
+            <Link href="/programmes" className="hover:text-[#7b4f38]">
+              Work With Me
+            </Link>
           </div>
         </div>
         <div className="border-t border-[#dcc5ad] bg-[#f2eadf]">

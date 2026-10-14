@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" role="img" aria-labelledby="title">
+  <title id="title">Boat pose line art</title>
+  <g stroke="#5A3E32" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M247 78c-15-7-33-1-40 14s-1 33 14 40 33 1 40-14 1-33-14-40Z"/>
+    <path d="M215 131c-35 35-65 79-90 132"/>
+    <path d="M219 134c36 43 71 86 106 129"/>
+    <path d="M125 263c58 18 124 18 200 0"/>
+    <path d="M142 221c-43-19-80-48-111-87"/>
+    <path d="M31 134c42 7 83 23 123 49"/>
+    <path d="M162 183c-39-53-73-107-102-162"/>
+    <path d="M60 21c28 19 59 56 92 111"/>
+    <path d="M258 178c38 25 72 57 101 96"/>
+    <path d="M359 274c-35-7-70-22-105-46"/>
+    <path d="M126 263c-28 34-55 59-81 76"/>
+    <path d="M326 263c30 32 60 56 91 72"/>
+    <path d="M45 339c92 35 216 34 372-4"/>
+    <path d="M82 366h255"/>
+  </g>
+</svg>
