@@ -210,6 +210,66 @@ export default function HomePage() {
         </ul>
       </section>
 
+      <section className="relative mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
+        <HomeShellAccent
+          kind="spiral"
+          className="-left-8 bottom-0 h-20 w-20 rotate-[-28deg] opacity-80 sm:-left-10 sm:h-28 sm:w-28"
+        />
+        <div className="grid gap-10 lg:grid-cols-[0.42fr_0.58fr]">
+          <div>
+            <SectionLabel label="Meet Preetha" />
+            <div
+              aria-hidden="true"
+              className="mt-8 aspect-[4/5] bg-[#e9e2d4]"
+            />
+          </div>
+
+          <div>
+            <h2 className="font-serif text-4xl text-[#221b18] sm:text-5xl">
+              Rooted in India. Shaped by many cultures. Teaching yoga beyond the
+              mat.
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-[#56473d]">
+              I’m Preetha — half Kannadiga, half Malayali, raised in India and
+              shaped by many cultures since. I grew up hearing Kannada, Malayalam,
+              Hindi and other South Indian languages around me, with Sanskrit
+              woven through so much of the vocabulary, philosophy and everyday
+              expression. Because of that, many yogic and Vedantic words have
+              always felt strangely familiar to me — not like foreign terms to
+              memorise, but like ideas I could often feel my way into through
+              language itself.
+            </p>
+            <p className="mt-4 text-lg leading-8 text-[#56473d]">
+              Later, life took me far beyond India. I spent many years in China,
+              built a family with a German husband, and now live in Malaysia.
+              Moving between Indian, Chinese, German and Malaysian cultures has
+              made me very aware of how differently people understand identity,
+              tradition, spirituality, discipline and everyday life.
+            </p>
+            <p className="mt-4 text-lg leading-8 text-[#56473d]">
+              That is the perspective I bring to yoga.
+            </p>
+            <p className="mt-4 text-lg leading-8 text-[#56473d]">
+              I’m currently completing my 200-hour yoga teacher training, but what
+              draws me most deeply is the philosophy behind the practice — the
+              language, the roots of the ideas, and how concepts such as dharma,
+              vairagya, pratyahara, atman and maya can become understandable and
+              relevant beyond textbooks or the yoga mat.
+            </p>
+            <p className="mt-4 text-lg leading-8 text-[#56473d]">
+              Through Mindful Yogi, I want to share yoga as movement, breath,
+              philosophy and reflection — grounded in its Indian roots, but spoken
+              in a way that can travel across cultures.
+            </p>
+            <p className="mt-4 text-lg leading-8 text-[#56473d]">
+              And yoga is only one part of who I am. I’m also a data scientist and
+              machine learning engineer, and I still very much enjoy building
+              software.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section
         id="programmes"
         className="relative border-y border-[#ded6c8] bg-[#ede6d7] py-20 lg:py-28"
@@ -305,76 +365,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative mx-auto max-w-6xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
-        <HomeShellAccent
-          kind="spiral"
-          className="-left-8 bottom-0 h-20 w-20 rotate-[-28deg] opacity-80 sm:-left-10 sm:h-28 sm:w-28"
-        />
-        <div className="grid gap-10 lg:grid-cols-[0.42fr_0.58fr]">
-          <div>
-            <SectionLabel label="Meet Preetha" />
-            <div
-              aria-hidden="true"
-              className="mt-8 aspect-[4/5] bg-[#e9e2d4]"
-            />
-          </div>
-
-          <div>
-            <h2 className="font-serif text-4xl text-[#221b18] sm:text-5xl">
-              A calm guide rooted in tradition and spoken in a modern way.
-            </h2>
-            <p className="mt-5 text-lg leading-8 text-[#56473d]">
-              Preetha teaches yoga as a lived practice — one that supports
-              steadiness, breath awareness, and a gentler relationship with the
-              body and mind. Her approach draws from Indian yogic wisdom while
-              remaining practical, approachable, and relevant to modern life.
-            </p>
-            <p className="mt-4 text-lg leading-8 text-[#56473d]">
-              She supports beginners, returning students, and adults seeking
-              more ease and focus in daily life, with a style that feels
-              supportive, grounded, and deeply human.
-            </p>
-            <div className="mt-8 border-l border-[#c5a892] pl-5 text-[#433a34]">
-              <p className="font-semibold text-[#2d241d]">Teaching style</p>
-              <p className="mt-2 leading-7">
-                Warm, clear, and encouraging — blending movement, breathwork,
-                reflection, and simple practices students can sustain beyond the
-                mat.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="booking"
-        className="relative border-y border-[#d8c7b6] bg-[#fbf6ee] py-16 sm:py-20 lg:py-24"
-      >
-        <HomeShellAccent
-          kind="starfish"
-          className="-right-3 bottom-1 h-14 w-14 rotate-[32deg] opacity-75 sm:right-6 sm:bottom-2 sm:h-20 sm:w-20"
-        />
-        <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
-          <div className="mb-12 grid gap-8 lg:grid-cols-[0.34fr_0.66fr]">
-            <SectionLabel label="Booking" />
-            <h2 className="font-serif text-4xl leading-tight text-[#221b18] sm:text-5xl">
-              Simple steps from first enquiry to your session.
-            </h2>
-          </div>
-
-          <ol className="max-w-2xl space-y-8 lg:ml-[34%]">
-            {bookingSteps.map((step, index) => (
-              <li key={step} className="flex items-start gap-3">
-                <MotifBullet index={index} size="large" />
-                <p className="font-serif text-2xl leading-relaxed text-[#45392f]">
-                  {step}
-                </p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
       <section
         id="philosophy"
         className="mx-auto max-w-6xl px-5 py-16 sm:px-8 lg:px-10 lg:py-24"
@@ -441,6 +431,35 @@ export default function HomePage() {
               Visit the practice library
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section
+        id="booking"
+        className="relative border-y border-[#d8c7b6] bg-[#fbf6ee] py-16 sm:py-20 lg:py-24"
+      >
+        <HomeShellAccent
+          kind="starfish"
+          className="-right-3 bottom-1 h-14 w-14 rotate-[32deg] opacity-75 sm:right-6 sm:bottom-2 sm:h-20 sm:w-20"
+        />
+        <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
+          <div className="mb-12 grid gap-8 lg:grid-cols-[0.34fr_0.66fr]">
+            <SectionLabel label="Booking" />
+            <h2 className="font-serif text-4xl leading-tight text-[#221b18] sm:text-5xl">
+              Simple steps from first enquiry to your session.
+            </h2>
+          </div>
+
+          <ol className="max-w-2xl space-y-8 lg:ml-[34%]">
+            {bookingSteps.map((step, index) => (
+              <li key={step} className="flex items-start gap-3">
+                <MotifBullet index={index} size="large" />
+                <p className="font-serif text-2xl leading-relaxed text-[#45392f]">
+                  {step}
+                </p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
