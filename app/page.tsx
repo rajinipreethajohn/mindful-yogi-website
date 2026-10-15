@@ -141,16 +141,16 @@ export default function HomePage() {
               Private yoga, mindful movement and the philosophy behind the
               practice — taught with clarity, depth and respect for its roots.
             </p>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <div className="cta-group mt-8">
               <Link
                 href="/philosophy"
-                className="border border-[#8c6652] bg-[#8c6652] px-6 py-3 text-center font-semibold text-[#fffaf5] transition hover:bg-[#6f4f40]"
+                className="cta-button cta-primary"
               >
                 Explore Yoga
               </Link>
               <a
                 href="#programmes"
-                className="px-2 py-3 text-center font-medium text-[#3d2e27] underline decoration-[#caa98c] underline-offset-8 transition hover:text-[#7b4f38]"
+                className="cta-button cta-secondary"
               >
                 Book a Session
               </a>
@@ -507,16 +507,16 @@ export default function HomePage() {
             Whether you are new to yoga or returning to a steadier rhythm, there
             is a place for you here.
           </p>
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+          <div className="cta-group mt-8">
             <a
               href="#programmes"
-              className="border border-[#8c6652] bg-[#8c6652] px-6 py-3 font-semibold text-[#fffaf5] transition hover:bg-[#6f4f40]"
+              className="cta-button cta-primary"
             >
               Book a Session
             </a>
             <a
               href="mailto:hello@mindfulyogi.com"
-              className="px-2 py-3 font-medium text-[#382e2a] underline decoration-[#b68667] underline-offset-8 transition hover:text-[#8f644c]"
+              className="cta-button cta-secondary"
             >
               Send an Enquiry
             </a>

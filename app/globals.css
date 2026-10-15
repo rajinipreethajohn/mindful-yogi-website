@@ -3,6 +3,8 @@
 :root {
   --background: #f7f3e9;
   --foreground: #2d241d;
+  --cta-chestnut: #3d2e24;
+  --cta-ivory: #fcfaf6;
 }
 
 html {
@@ -35,6 +37,75 @@ body {
 
 a {
   text-decoration: none;
+}
+
+@layer components {
+  .cta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--cta-chestnut);
+    border-radius: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 160ms ease, color 160ms ease;
+  }
+
+  .cta-primary {
+    background-color: var(--cta-chestnut);
+    color: var(--cta-ivory);
+  }
+
+  .cta-secondary {
+    background-color: var(--cta-ivory);
+    color: var(--cta-chestnut);
+  }
+
+  .cta-button:focus-visible {
+    outline: 2px solid var(--cta-chestnut);
+    outline-offset: 4px;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .cta-primary:hover {
+      background-color: #2d241d;
+    }
+
+    .cta-secondary:hover {
+      background-color: var(--cta-chestnut);
+      color: var(--cta-ivory);
+    }
+  }
+
+  .cta-button:active {
+    background-color: #241b15;
+    color: var(--cta-ivory);
+  }
+
+  @media (min-width: 40rem) {
+    .cta-group {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta-button {
+      transition: none;
+    }
+  }
 }
 
 .font-serif {
