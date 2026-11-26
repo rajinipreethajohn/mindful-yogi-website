@@ -5,7 +5,7 @@ import styles from "../home.module.css";
 import { poses } from "./poses";
 
 export const metadata: Metadata = {
-  title: "Practice | Mindful Yogi",
+  title: "Postures | Mindful Yogi",
   description: "Explore the Mindful Yogi asana library with photographs, Sanskrit names, and English names in their original learning sequence.",
 };
 
@@ -15,7 +15,7 @@ export default function PracticePage() {
       <SiteNav active="practice" />
       <section className="mx-auto max-w-6xl px-5 pb-12 pt-10 sm:px-8 lg:px-10 lg:pt-16" aria-labelledby="practice-title">
         <p className="mb-6 text-xs font-medium uppercase text-[#7b5d49]">Experiencing yoga</p>
-        <h1 id="practice-title" className="max-w-3xl font-serif text-4xl leading-tight sm:text-5xl lg:text-6xl">A practice, one posture at a time.</h1>
+        <h1 id="practice-title" className="max-w-3xl font-serif text-5xl leading-[0.94] text-[#1d1714] sm:text-6xl lg:text-[5rem]">A practice, one <em className="italic">posture at a time.</em></h1>
         <div className="mt-6 max-w-3xl space-y-5 text-lg leading-8 text-[#574739]">
           <p>Asana is the third of the eight limbs of Patanjali’s Ashtanga Yoga. It is one part of a whole path: ethical living, personal observances, posture, breath regulation, turning the senses inward, concentration, meditation, and samadhi — meditative absorption.</p>
           <p>Here, we approach asana as a practice of self-discipline, patience, and attention. Learning to meet the body with steadiness and ease helps prepare us for sitting, breathing, and meditation. This practice belongs within the wider eight-limbed path toward samadhi.</p>

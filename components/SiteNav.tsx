@@ -2,14 +2,15 @@ import Link from "next/link";
 
 const navItems = [
   { label: "Philosophy", href: "/philosophy" },
-  { label: "Practice", href: "/practice" },
+  { label: "Postures", href: "/practice" },
+  { label: "Breath & Meditation", href: "/breath-and-meditation" },
   { label: "Work With Me", href: "/programmes" },
 ];
 
 export default function SiteNav({
   active,
 }: {
-  active?: "home" | "work" | "philosophy" | "practice";
+  active?: "home" | "work" | "philosophy" | "practice" | "breath";
 }) {
   return (
     <header className="mx-auto max-w-6xl px-5 py-7 sm:px-8 lg:px-10">
@@ -24,7 +25,8 @@ export default function SiteNav({
               const isActive =
                 (active === "work" && item.href === "/programmes") ||
                 (active === "philosophy" && item.href === "/philosophy") ||
-                (active === "practice" && item.href === "/practice");
+                (active === "practice" && item.href === "/practice") ||
+                (active === "breath" && item.href === "/breath-and-meditation");
 
               return (
                 <Link
